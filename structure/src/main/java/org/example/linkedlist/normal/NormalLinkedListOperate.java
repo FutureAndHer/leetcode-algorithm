@@ -99,6 +99,94 @@ public class NormalLinkedListOperate {
         return headNode;
     }
 
+    /**
+     * 删除表头结点
+     *
+     * @param: headNode
+     * @return: NormalListNode 新的表头结点
+     * @author: Max Solider
+     * @date: 2022/10/8 14:55
+     */
+    static NormalListNode deleteHead(NormalListNode headNode) {
+        if (headNode == null) {
+            return headNode;
+        }
+        NormalListNode newHead = headNode.getNext();
+        headNode.setNext(null);
+        headNode = null;
+        return newHead;
+    }
+
+    /**
+     * 删除表尾结点
+     *
+     * @param: [headNode]
+     * @return: NormalListNode
+     * @author: Max Solider
+     * @date: 2022/10/8 15:14
+     */
+    static NormalListNode deleteTail(NormalListNode headNode) {
+        if (headNode == null) {
+            return headNode;
+        }
+        // 如果链表只有一个元素结点
+        if (headNode.getNext() == null) {
+            headNode = null;
+            return headNode;
+        }
+        NormalListNode previousNode = headNode;
+        // 遍历找到待删除结点前一个元素结点
+        while (previousNode.getNext().getNext() != null) {
+            previousNode = previousNode.getNext();
+        }
+        NormalListNode oldTail = previousNode.getNext();
+        oldTail = null;
+        previousNode.setNext(null);
+        return headNode;
+    }
+
+    /**
+     * 删除任意位置元素结点
+     *
+     * @param headNode 链表头结点
+     * @param position 待删除位置
+     * @return NormalListNode
+     * @author: Max Solider
+     * @date: 2022/10/8 15:34
+     */
+    static NormalListNode delete(NormalListNode headNode, int position) {
+        // 如果是空链表，或者待删除位置不合法
+        if (headNode == null || position < 1) {
+            System.out.println("Position of node to delete is invalid. The position must be greater than 0");
+            return headNode;
+        }
+        // 如果是删除第一个元素结点
+        if (position == 1) {
+            NormalListNode deleteNode = headNode;
+            headNode = deleteNode.getNext();
+            deleteNode = null;
+            return headNode;
+        }
+        // 遍历找到待删除位置的前一个元素
+        int currentPosition = 1;
+        NormalListNode previousNode = headNode;
+        while (currentPosition != position - 1) {
+            previousNode = previousNode.getNext();
+            currentPosition++;
+            // 如果previousNode的下一个结点已经都是null了，还没走到待删除位置，说明待删除位置不合法
+            if (previousNode.getNext() == null) {
+                System.out.println("Position of node to delete is invalid. The position must be less than " + currentPosition);
+                return headNode;
+            }
+        }
+        NormalListNode deleteNode = previousNode.getNext();
+        // 将待删除位置的前一个元素的next指针指向待删除位置的下一个元素
+        previousNode.setNext(deleteNode.getNext());
+        // 移除待删除位置的元素
+        deleteNode.setNext(null);
+        deleteNode = null;
+        return headNode;
+    }
 
     /**
      * 执行方法
@@ -118,16 +206,22 @@ public class NormalLinkedListOperate {
 //        NormalListNode newNode = new NormalListNode(8);
 //        headNode = insertTail(headNode, newNode);
         // 4. 任意位置插入新结点
-        NormalListNode newNode = new NormalListNode(8);
+//        NormalListNode newNode = new NormalListNode(8);
 //        headNode = insert(headNode, newNode, 1);
-//        listLength(headNode);
 //        headNode = insert(headNode, newNode, 2);
-//        listLength(headNode);
 //        headNode = insert(headNode, newNode, 4);
-//        listLength(headNode);
 //        headNode = insert(headNode, newNode, 5);
-//        listLength(headNode);
-        headNode = insert(headNode, newNode, 6);
+//        headNode = insert(headNode, newNode, 6);
+        // 5. 删除表头结点
+//        headNode = deleteHead(headNode);
+        // 6. 删除表尾结点
+//        headNode = deleteTail(headNode);
+        // 7. 删除链表任意结点
+//        headNode = delete(headNode, 0);
+//        headNode = delete(headNode, 1);
+//        headNode = delete(headNode, 4);
+//        headNode = delete(headNode, 5);
+//        headNode = delete(headNode, 7);
         listLength(headNode);
     }
 
