@@ -262,7 +262,7 @@ public class DllOperate {
      * @author: Max Solider
      * @date: 2022/10/8 16:36
      */
-    private static DllNode initList() {
+    static DllNode initList() {
         DllNode node1 = new DllNode(1);
         DllNode node2 = new DllNode(2);
         DllNode node3 = new DllNode(3);

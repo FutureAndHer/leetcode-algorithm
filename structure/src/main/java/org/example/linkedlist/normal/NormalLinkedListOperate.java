@@ -233,7 +233,7 @@ public class NormalLinkedListOperate {
      * @author: Max Solider
      * @date: 2022/10/8 00:36
      */
-    private static NormalListNode initList() {
+    static NormalListNode initList() {
         NormalListNode node1 = new NormalListNode(1);
         NormalListNode node2 = new NormalListNode(2);
         NormalListNode node3 = new NormalListNode(3);
