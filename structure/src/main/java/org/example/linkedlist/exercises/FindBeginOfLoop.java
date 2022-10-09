@@ -9,7 +9,7 @@ import org.example.linkedlist.normal.NormalListNode;
  * @author: Max Solider
  * @date: 2022-10-09 10:43
  */
-public class FindBeginofLoop {
+public class FindBeginOfLoop {
 
     /**
      * 找到链表中环的起点
