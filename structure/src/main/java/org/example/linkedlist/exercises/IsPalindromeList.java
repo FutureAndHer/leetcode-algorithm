@@ -5,11 +5,11 @@ import org.example.linkedlist.normal.NormalListNode;
 /**
  * 判定链表是否是回文
  *
- * @className: IfPalindromeList
+ * @className: IsPalindromeList
  * @author: Max Solider
  * @date: 2022-10-11 22:38
  */
-public class IfPalindromeList {
+public class IsPalindromeList {
 
     /**
      * 判定链表是否是回文
@@ -18,7 +18,7 @@ public class IfPalindromeList {
      * @author: Max Solider
      * @date: 2022/10/11 22:39
      */
-    static boolean ifPalindromeList(NormalListNode headNode) {
+    static boolean isPalindromeList(NormalListNode headNode) {
         if (headNode == null || headNode.getNext() == null || headNode.getNext() == headNode) {
             System.out.println("The linked list is palindrome list.");
             return true;
@@ -79,7 +79,7 @@ public class IfPalindromeList {
 
     public static void main(String[] args) {
         NormalListNode list = initList();
-        ifPalindromeList(list);
+        isPalindromeList(list);
     }
 
     /**
