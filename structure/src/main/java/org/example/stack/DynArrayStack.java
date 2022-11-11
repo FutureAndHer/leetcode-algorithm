@@ -68,7 +68,7 @@ public class DynArrayStack {
      */
     public int pop() {
         if (isEmpty()) {
-            System.out.println("Stack Overflow.");
+            System.out.println("Stack Empty.");
             return 0;
         }
         int result = array[top];
