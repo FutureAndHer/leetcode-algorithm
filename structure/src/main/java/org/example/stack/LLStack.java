@@ -37,7 +37,7 @@ public class LLStack {
      *
      * @param data 待插入元素
      */
-    public void push(int data) {
+    public void push(String data) {
         if (headNode == null) {
             headNode = new LLNode(data);
             return;
@@ -52,12 +52,12 @@ public class LLStack {
      *
      * @return 栈顶元素
      */
-    public int pop() {
+    public String pop() {
         if (isEmpty()) {
             System.out.println("Stack Empty.");
-            return 0;
+            return "";
         }
-        int result = headNode.getData();
+        String result = headNode.getData();
         headNode = headNode.getNext();
         return result;
     }
@@ -77,14 +77,14 @@ public class LLStack {
         /**
          * 结点元素
          */
-        private int data;
+        private String data;
 
         /**
          * 后继指针
          */
         private LLNode next;
 
-        public LLNode(int data) {
+        public LLNode(String data) {
             this.data = data;
         }
 
@@ -96,11 +96,11 @@ public class LLStack {
             this.next = next;
         }
 
-        public int getData() {
+        public String getData() {
             return data;
         }
 
-        public void setData(int data) {
+        public void setData(String data) {
             this.data = data;
         }
     }
