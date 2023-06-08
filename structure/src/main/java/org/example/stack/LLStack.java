@@ -63,6 +63,18 @@ public class LLStack {
     }
 
     /**
+     * 获取栈顶元素，不出栈
+     * @return 栈顶元素
+     */
+    public String top() {
+        if (isEmpty()) {
+            System.out.println("Stack Empty.");
+            return "";
+        }
+        return headNode.getData();
+    }
+
+    /**
      * 删除栈
      */
     public void deleteStack() {
