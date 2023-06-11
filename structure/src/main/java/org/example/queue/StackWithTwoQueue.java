@@ -40,13 +40,13 @@ public class StackWithTwoQueue {
             for (int i = 0; i < size - 1; i++) {
                 q1.enQueue(q2.deQueue());
             }
-            return q2.deQueue();
+            return (Integer)q2.deQueue();
         } else {
             int size = q1.getQueueSize();;
             for (int i = 0; i < size - 1; i++) {
                 q2.enQueue(q1.deQueue());
             }
-            return q1.deQueue();
+            return (Integer)q1.deQueue();
         }
     }
 

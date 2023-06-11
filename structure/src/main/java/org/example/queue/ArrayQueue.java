@@ -12,7 +12,7 @@ public class ArrayQueue {
     /**
      * 用于存放元素的数组
      */
-    private int[] array;
+    private Object[] array;
 
     /**
      * 队首下标
@@ -35,7 +35,7 @@ public class ArrayQueue {
      */
     public ArrayQueue(int size) {
         capacity = size;
-        array = new int[size];
+        array = new Integer[size];
         head = -1;
         tail = -1;
     }
@@ -77,7 +77,7 @@ public class ArrayQueue {
      * 入队
      * @param data 待入队元素
      */
-    public void enQueue(int data) {
+    public void enQueue(Object data) {
         if (isFull()) {
             return;
         }
@@ -93,11 +93,11 @@ public class ArrayQueue {
      * 出队
      * @return 队首元素
      */
-    public Integer deQueue() {
+    public Object deQueue() {
         if (isEmpty()) {
             return null;
         }
-        int result = array[head];
+        Integer result = (Integer) array[head];
         if (head == tail) {
             head = tail = -1;
         } else {
